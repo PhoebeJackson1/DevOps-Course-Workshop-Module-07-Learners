@@ -14,25 +14,18 @@ jobs:
     - name: C# tests
       run: dotnet test
 
-    # - name: Move
-    #   run: cd .\DotnetTemplate.Web\
-
     - name: Install packages
-      run: |
-        cd .\DotnetTemplate.Web\
-        npm install
+      working-directory: ./DotnetTemplate.Web
+      run: npm install
 
     - name: Build Typescript
-      run: |
-        cd .\DotnetTemplate.Web\
-        npm run build
+      working-directory: ./DotnetTemplate.Web
+      run: npm run build
 
     - name: Lint Typescript
-      run: |
-        cd .\DotnetTemplate.Web\
-        npm run lint
+      working-directory: ./DotnetTemplate.Web
+      run: npm run lint
 
     - name: Typescript tests
-      run: |
-        cd .\DotnetTemplate.Web\
-        npm t        
+      working-directory: ./DotnetTemplate.Web
+      run: npm t
